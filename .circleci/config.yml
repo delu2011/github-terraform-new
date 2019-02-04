@@ -10,9 +10,12 @@ jobs:
     <<: *terraform
     steps:
       - checkout
-#      - run:
-#          name: Add github.com to ~/.ssh/known_hosts
-#          command: mkdir ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - run:
+          name: export aws key id
+          command: export AWS_ACCESS_KEY_ID="$aws_access_key_id"
+      - run:
+          name: export aws access key
+          command: export AWS_SECRET_ACCESS_KEY="$aws_secret_access_key"
       - run:
           name: terraform init
           command: terraform init -input=false
