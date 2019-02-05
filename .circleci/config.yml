@@ -16,10 +16,10 @@ jobs:
       - checkout
       - run:
           name: export aws key id
-          command: echo 'export AWS_ACCESS_KEY_ID=$aws_access_key_id'
+          command: echo 'export AWS_ACCESS_KEY_ID'
       - run:
           name: export aws access key
-          command: echo 'export AWS_SECRET_ACCESS_KEY=$aws_secret_access_key'
+          command: echo 'export AWS_SECRET_ACCESS_KEY'
       - run:
           name: terraform init
           command: terraform init -input=false
